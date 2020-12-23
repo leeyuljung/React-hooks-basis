@@ -22,6 +22,14 @@ class App extends Component{
     })
   }
 
+  deleteItem(index){
+   let newList = this.state.list;
+   newList.splice(index, 1); 
+   this.setState({
+     list: newList
+   })
+  }
+
   render(){
     return(
       <Fragment>
@@ -32,7 +40,11 @@ class App extends Component{
         <ul>
           {
             this.state.list.map((item, index) => {
-              return <li key={index + item}>{item}</li> 
+              return(
+                <li key={index + item} onClick={this.deleteItem.bind(this, index)}>
+                  {item}
+                </li> 
+              ) 
             })
           }
         </ul>
