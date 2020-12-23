@@ -41,8 +41,12 @@ class App extends Component{
           {
             this.state.list.map((item, index) => {
               return(
-                <li key={index + item} onClick={this.deleteItem.bind(this, index)}>
-                  {item}
+                <li 
+                  key={index + item} 
+                  onClick={this.deleteItem.bind(this, index)}
+                  dangerouslySetInnerHTML={{__html: item}}
+                >
+                  {/* {item} */}
                 </li> 
               ) 
             })
