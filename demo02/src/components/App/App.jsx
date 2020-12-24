@@ -20,11 +20,21 @@ class App extends Component{
     })
   }
 
+  // 用 ref 來綁定
+  // inputChange(){
+  //   this.setState({
+  //     inputValue: this.input.value
+  //   })
+  // }
+
   // 增加項目
   addItem(){
     this.setState({
       list: [...this.state.list, this.state.inputValue],
       inputValue: ''
+    },() => {
+      // setState 方法提供了一個回調函數，這樣才能獲取同步的資料
+      console.log(this.ul.querySelectorAll('li').length);
     })
   }
 
@@ -41,10 +51,15 @@ class App extends Component{
     return(
       <Fragment>
         <div>
-          <input type="text" value={this.state.inputValue} onChange={this.inputChange}/>
+          <input 
+            type="text" 
+            value={this.state.inputValue} 
+            onChange={this.inputChange}
+            // ref={(input)=>{this.input = input}}
+          />
           <button onClick={this.addItem}>Add Item</button>
         </div>
-        <ul>
+        <ul ref={(ul)=>{this.ul = ul}}>
           {
             this.state.list.map((item, index) => {
               return(
