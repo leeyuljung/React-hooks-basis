@@ -47,7 +47,17 @@ class App extends Component{
    })
   }
 
+  // componentWillMount 為即將過時的生命週期函數，在 17.x 版本中會完全棄用，現已更名為 UNSAFE_componentWillMount()
+  UNSAFE_componentWillMount(){
+    console.log('UNSAFE_componentWillMount---組件即將要掛載到頁面了');
+  }
+
+  componentDidMount(){
+    console.log('componentDidMount---組件掛載完成了');
+  }
+
   render(){
+    console.log('render---組件掛載中');
     return(
       <Fragment>
         <div>
