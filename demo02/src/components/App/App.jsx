@@ -47,13 +47,27 @@ class App extends Component{
    })
   }
 
-  // componentWillMount 為即將過時的生命週期函數，在 17.x 版本中會完全棄用，現已更名為 UNSAFE_componentWillMount()
+  // componentWillMount, componentWillUpdate, componentWillReceiveProps 為即將過時的生命週期函數，在 17.x 版本中會完全棄用，現已更名為 UNSAFE_componentWillMount, UNSAFE_componentWillUpdate, UNSAFE_componentWillReceiveProps
   UNSAFE_componentWillMount(){
-    console.log('UNSAFE_componentWillMount---組件即將要掛載到頁面了');
+    console.log('Mounting---UNSAFE_componentWillMount---組件即將要掛載到頁面了');
   }
 
   componentDidMount(){
-    console.log('componentDidMount---組件掛載完成了');
+    console.log('Mounting---componentDidMount---組件掛載完成了');
+  }
+
+  // 需要返回 true/false，以決定是否往下執行
+  shouldComponentUpdate(){
+    console.log('Updation---shouldComponentUpdate---組件發生改變前');
+    return true;
+  }
+
+  UNSAFE_componentWillUpdate(){
+    console.log('Updation---componentWillUpdate---組件發生改變前，shouldComponentUpdate之後');
+  }
+
+  componentDidUpdate(){
+    console.log('Updation---componentDidUpdate---組件更新後');
   }
 
   render(){

@@ -13,6 +13,10 @@ class AddList extends Component {
     this.props.deleteItem(this.props.index)
   }
 
+  UNSAFE_componentWillReceiveProps(){
+    console.log('Updation---componentWillReceiveProps---子組件接收到父組件傳遞來的參數');
+  }
+
   render() { 
     let content = this.props.content;
     let name = this.props.name;
