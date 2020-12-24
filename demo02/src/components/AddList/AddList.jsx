@@ -17,6 +17,10 @@ class AddList extends Component {
     console.log('Updation---componentWillReceiveProps---子組件接收到父組件傳遞來的參數');
   }
 
+  componentWillUnmount(){
+    console.log('UnMounting---componentWillUnmount---組件被刪除的時候');
+  }
+
   render() { 
     let content = this.props.content;
     let name = this.props.name;
