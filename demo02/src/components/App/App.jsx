@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { AddList } from '../AddList';
 
 class App extends Component{
   constructor(props){
@@ -7,14 +8,19 @@ class App extends Component{
       inputValue: '',
       list: ['js', 'css']
     }
+    this.inputChange = this.inputChange.bind(this);
+    this.addItem = this.addItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
 
+  // 填寫項目
   inputChange(e){
     this.setState({
       inputValue: e.target.value
     })
   }
 
+  // 增加項目
   addItem(){
     this.setState({
       list: [...this.state.list, this.state.inputValue],
@@ -22,6 +28,7 @@ class App extends Component{
     })
   }
 
+  // 刪除項目
   deleteItem(index){
    let newList = this.state.list;
    newList.splice(index, 1); 
@@ -34,20 +41,25 @@ class App extends Component{
     return(
       <Fragment>
         <div>
-          <input type="text" value={this.state.inputValue} onChange={this.inputChange.bind(this)}/>
-          <button onClick={this.addItem.bind(this)}>Add Item</button>
+          <input type="text" value={this.state.inputValue} onChange={this.inputChange}/>
+          <button onClick={this.addItem}>Add Item</button>
         </div>
         <ul>
           {
             this.state.list.map((item, index) => {
               return(
-                <li 
-                  key={index + item} 
-                  onClick={this.deleteItem.bind(this, index)}
-                  dangerouslySetInnerHTML={{__html: item}}
-                >
-                  {/* {item} */}
-                </li> 
+                // <li 
+                //   key={index + item} 
+                //   onClick={this.deleteItem.bind(this, index)}
+                //   dangerouslySetInnerHTML={{__html: item}}
+                // >
+                // </li> 
+                <AddList 
+                  key={index + item}
+                  content={item}
+                  index={index}
+                  deleteItem={this.deleteItem}
+                />
               ) 
             })
           }
