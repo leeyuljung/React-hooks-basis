@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { AddList } from '../AddList';
 // import axios from 'axios';
+import { Secret } from '../Secret';
+import '../../style/index.css';
 
 class App extends Component{
   constructor(props){
@@ -106,6 +108,7 @@ class App extends Component{
             })
           }
         </ul>
+        <Secret />
       </Fragment>
     )
   }
