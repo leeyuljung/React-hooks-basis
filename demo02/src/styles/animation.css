@@ -1,0 +1,25 @@
+.secretText-enter{
+  opacity: 0;
+}
+
+.secretText-enter-active{
+  opacity: 1;
+  transition: opacity 2s;
+}
+
+.secretText-enter-done{
+  opacity: 1;
+}
+
+.secretText-exit{
+  opacity: 1;
+}
+
+.secretText-exit-active{
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.secretText-exit-done{
+  opacity: 0;
+}

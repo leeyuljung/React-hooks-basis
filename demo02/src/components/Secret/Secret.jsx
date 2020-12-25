@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 class Secret extends Component {
   constructor(props) {
@@ -18,7 +19,15 @@ class Secret extends Component {
   render() { 
     return ( 
       <div>
-        <div className={this.state.isShow? 'show' : 'hide'}>Secret</div>
+        {/* <div className={this.state.isShow? 'show' : 'hide'}>Secret</div> */}
+        <CSSTransition
+          in={this.state.isShow}
+          timeout={2000}
+          classNames="secretText"
+          unmountOnExit
+        >
+          <div>Secret</div>
+        </CSSTransition>
         <button onClick={this.toggleDisplay}>Toggle</button>
       </div>
     );
