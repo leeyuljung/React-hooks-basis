@@ -24,11 +24,11 @@ class AddList extends Component {
   }
 
   UNSAFE_componentWillReceiveProps(){
-    // console.log('Updation---componentWillReceiveProps---子組件接收到父組件傳遞來的參數');
+    console.log('Updation---componentWillReceiveProps---子組件接收到父組件傳遞來的參數');
   }
 
   componentWillUnmount(){
-    // console.log('UnMounting---componentWillUnmount---組件被刪除的時候');
+    console.log('UnMounting---componentWillUnmount---組件被刪除的時候');
   }
 
   render() { 
