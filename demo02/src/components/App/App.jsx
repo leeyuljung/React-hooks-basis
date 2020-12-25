@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { AddList } from '../AddList';
 // import axios from 'axios';
 import { Secret } from '../Secret';
-import '../../style/index.css';
+import '../../styles/index.css';
 
 class App extends Component{
   constructor(props){
