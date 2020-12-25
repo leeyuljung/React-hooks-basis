@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { AddList } from '../AddList';
 // import axios from 'axios';
 import { Secret } from '../Secret';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 // import '../../styles/index.css';
 import '../../styles/animation.css';
@@ -97,18 +98,28 @@ class App extends Component{
           <button onClick={this.addItem}>Add Item</button>
         </div>
         <ul ref={(ul)=>{this.ul = ul}}>
-          {
-            this.state.list.map((item, index) => {
-              return(
-                <AddList 
-                  key={index + item}
-                  content={item}
-                  index={index}
-                  deleteItem={this.deleteItem}
-                />
-              ) 
-            })
-          }
+          <TransitionGroup>
+            {
+              this.state.list.map((item, index) => {
+                return(
+                  <CSSTransition
+                    timeout={500}
+                    classNames="secretText"
+                    unmountOnExit
+                    appear={true}
+                    key={index + item}
+                  >
+                    <AddList 
+                      key={index + item}
+                      content={item}
+                      index={index}
+                      deleteItem={this.deleteItem}
+                    />
+                  </CSSTransition>
+                ) 
+              })
+            }
+          </TransitionGroup>
         </ul>
         <Secret />
       </Fragment>
