@@ -1,0 +1,37 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+.container{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.leftNav{
+  width: 15%;
+  height: 100vh;
+  padding: 1%;
+  box-sizing: border-box;
+  background: #abc;
+}
+
+.leftNav ul li a{
+  color: #027;
+}
+
+.main{
+  width: 85%;
+  height: 100vh;
+  padding: 1%;
+  box-sizing: border-box;
+}
