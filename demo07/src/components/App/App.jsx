@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Index } from '../Index';
+import { VideoPage } from '../VideoPage';
 import '../../styles/index.css';
 
 class App extends Component {
@@ -12,12 +13,13 @@ class App extends Component {
             <h3>Nav</h3>
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li><Link to="">Video</Link></li>
+              <li><Link to="/video">Video</Link></li>
               <li><Link to="">Work</Link></li>
             </ul>
           </div>
           <div className="main">
-            <Route path="/" exact component={Index}/>
+            <Route path="/" exact component={ Index }/>
+            <Route path="/video" component={ VideoPage }/>
           </div>
         </div>
       </Router>
