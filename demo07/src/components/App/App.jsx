@@ -7,21 +7,41 @@ import '../../styles/index.css';
 
 class App extends Component {
   render(){
+    let routeConfig = [
+      { path: "/", title: "Home",exact: true, component: Index },
+      { path: "/video", title: "Video", exact: false, component: VideoPage },
+      { path: "/article", title: "Article", exact: false, component: ArticlePage }
+    ]
+
     return(
       <Router>
         <div className="container">
           <div className="leftNav">
             <h3>Nav</h3>
             <ul>
-              <li><Link to="/">Home</Link></li>
+              {
+                routeConfig.map((item, index) => {
+                  return(
+                    <li key={index}><Link to={item.path}>{item.title}</Link></li>
+                  )
+                })
+              }
+              {/* <li><Link to="/">Home</Link></li>
               <li><Link to="/video">Video</Link></li>
-              <li><Link to="/article">Article</Link></li>
+              <li><Link to="/article">Article</Link></li> */}
             </ul>
           </div>
           <div className="main">
-            <Route path="/" exact component={ Index }/>
+            {
+              routeConfig.map((item, index) => {
+                return(
+                  <Route key={index} path={item.path} exact={item.exact} component={item.component}/>
+                )
+              })
+            }
+            {/* <Route path="/" exact component={ Index }/>
             <Route path="/video" component={ VideoPage }/>
-            <Route path="/article" component={ ArticlePage }/>
+            <Route path="/article" component={ ArticlePage }/> */}
           </div>
         </div>
       </Router>
