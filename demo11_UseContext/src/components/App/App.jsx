@@ -7,7 +7,6 @@ function App(){
 
   return(
     <div>
-      <p>You click { count } times.</p>
       <button onClick={() => {setCount( count + 1 )}}>Click</button>
       <CountContext.Provider value={ count }>
         <Counter />
@@ -19,7 +18,7 @@ function App(){
 // child component
 function Counter(){
   let count = useContext(CountContext); 
-  return <h3>{ count }</h3>
+  return <p>You click { count } times.</p>
 }
  
 export { App }
