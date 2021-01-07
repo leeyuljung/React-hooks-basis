@@ -4,7 +4,6 @@ import { Buttons } from '../Buttons';
 import { Colors } from '../Colors';
 
 function App(){
- 
   return(
     <div>
       <Colors>
@@ -14,5 +13,5 @@ function App(){
     </div>
   )
 }
- 
+
 export { App }

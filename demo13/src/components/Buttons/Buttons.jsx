@@ -6,8 +6,8 @@ function Buttons(){
 
   return(
     <div>
-      <button onClick={ () => { dispatch({ type: COLOR_UPDATE, color: 'yellow' }) }}>Yellow</button>
-      <button onClick={ () => { dispatch({ type: COLOR_UPDATE, color: 'red' }) }}>Red</button>
+      <button onClick={ () => {dispatch({ type: COLOR_UPDATE, color: 'yellow' })} }>Yellow</button>
+      <button onClick={ () => {dispatch({ type: COLOR_UPDATE, color: 'red' })} }>Red</button>
     </div>
   )
 }
