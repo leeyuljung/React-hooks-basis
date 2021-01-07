@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
-import { ColorContext, COLOR_UPDATE } from '../Colors';
+import { ColorContext, COLOR_UPDATE } from '../Colors/Colors';
 
 function Buttons(){
   const { dispatch } = useContext(ColorContext);
 
   return(
     <div>
-      <button onClick={ () => {dispatch({ type: COLOR_UPDATE, color: 'yellow' })} }>Yellow</button>
-      <button onClick={ () => {dispatch({ type: COLOR_UPDATE, color: 'red' })} }>Red</button>
+      <button onClick={() => { dispatch({ type: COLOR_UPDATE, color: 'yellow' }) }}>Yellow</button>
+      <button onClick={() => { dispatch({ type: COLOR_UPDATE, color: 'red' }) }}>Red</button>
     </div>
   )
 }
 
-export { Buttons };
+export default Buttons;

@@ -14,8 +14,8 @@ const reducer = ( state, action ) => {
   }
 }
 
-const Colors = props => {
-  const [ color, dispatch ] = useReducer(reducer, 'blue');
+export const Colors = props => {
+  const [ color, dispatch ] = useReducer( reducer, 'blue' )
 
   return(
     <ColorContext.Provider value={{ color, dispatch }}>
@@ -23,5 +23,3 @@ const Colors = props => {
     </ColorContext.Provider>
   )
 }
-
-export { Colors };

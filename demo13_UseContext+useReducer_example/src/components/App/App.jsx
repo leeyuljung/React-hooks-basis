@@ -1,7 +1,7 @@
 import React from 'react';
-import { ShowArea } from '../ShowArea';
-import { Buttons } from '../Buttons';
-import { Colors } from '../Colors';
+import ShowArea from '../ShowArea/ShowArea';
+import Buttons from '../Buttons/Buttons';
+import { Colors } from '../Colors/Colors';
 
 function App(){
   return(
@@ -14,4 +14,4 @@ function App(){
   )
 }
 
-export { App }
+export default App;
