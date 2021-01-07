@@ -60,4 +60,4 @@ AddList.defaultProps = {
 
 
  
-export { AddList };
+export default AddList;

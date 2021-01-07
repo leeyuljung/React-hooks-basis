@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import { AddList } from '../AddList';
+import AddList from '../AddList/AddList';
 // import axios from 'axios';
-import { Secret } from '../Secret';
+import Secret from '../Secret/Secret';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 // import '../../styles/index.css';
@@ -127,4 +127,4 @@ class App extends Component{
   }
 }
 
-export { App }
+export default App;

@@ -34,4 +34,4 @@ class Secret extends Component {
   }
 }
  
-export { Secret };
+export default Secret;
