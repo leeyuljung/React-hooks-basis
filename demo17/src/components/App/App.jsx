@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import { Input, Button, List } from 'antd';
 import store from '../../redux/store';
+import { CHANGE_INPUT_VALUE, ADD_ITEM, DELETE_ITEM } from '../../redux/actionTypes';
 
 class App extends Component {
   constructor(props){
@@ -15,7 +16,7 @@ class App extends Component {
 
   changeInputValue(e){
     const action = {
-      type: 'changeInputValue',
+      type: CHANGE_INPUT_VALUE,
       value: e.target.value
     }
     store.dispatch(action);
@@ -23,14 +24,14 @@ class App extends Component {
 
   clickBtn(){
     const action = {
-      type: 'addItem'
+      type: ADD_ITEM
     }
     store.dispatch(action);
   }
 
   deleteItem(index){
     const action = {
-      type: 'deleteItem',
+      type: DELETE_ITEM,
       index
     }
     store.dispatch(action);
