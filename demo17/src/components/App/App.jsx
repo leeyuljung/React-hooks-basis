@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import 'antd/dist/antd.css';
-import { Input, Button, List } from 'antd';
 import store from '../../redux/store';
 import { changeInputAction, addItemAction, deleteItemAction } from '../../redux/actionCreators';
+import TodoListUI from '../TodoListUI/TodoListUI.jsx';
 
 class App extends Component {
   constructor(props){
@@ -10,6 +9,7 @@ class App extends Component {
     this.state = store.getState();
     this.changeInputValue = this.changeInputValue.bind(this);
     this.clickBtn = this.clickBtn.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
     this.storeChange = this.storeChange.bind(this);
     store.subscribe(this.storeChange);
   }
@@ -34,32 +34,15 @@ class App extends Component {
   }
 
   render() { 
-    return (  
-      <>
-        <div style={{ width: '300px', margin: '1rem auto' }}>
-          <Input 
-            placeholder= "Write something..." 
-            style={{width: '68%', marginRight: '2%'}} 
-            onChange={ this.changeInputValue }
-            value={ this.state.inputValue }
-          />
-          <Button 
-            type="primary" 
-            style={{width: '30%'}} 
-            onClick={ this.clickBtn }
-          >
-            Add
-          </Button>
-        </div>
-        <div style={{width: '300px', margin: '1rem auto'}}>
-          <List 
-            bordered
-            dataSource={ this.state.list }
-            renderItem={(item, index) => <List.Item onClick={ this.deleteItem.bind(this, index) }>{ item }</List.Item>}
-          />
-        </div>
-      </>
-    );
+    return (
+      <TodoListUI 
+        inputValue = { this.state.inputValue }
+        list = { this.state.list }
+        changeInputValue = { this.changeInputValue }
+        clickBtn = { this.clickBtn }
+        deleteItem = { this.deleteItem }
+      />
+    )
   }
 }
  
