@@ -28,6 +28,14 @@ class App extends Component {
     store.dispatch(action);
   }
 
+  deleteItem(index){
+    const action = {
+      type: 'deleteItem',
+      index
+    }
+    store.dispatch(action);
+  }
+
   storeChange(){
     this.setState(store.getState());
   }
@@ -54,7 +62,7 @@ class App extends Component {
           <List 
             bordered
             dataSource={ this.state.list }
-            renderItem={item => <List.Item>{ item }</List.Item>}
+            renderItem={(item, index) => <List.Item onClick={ this.deleteItem.bind(this, index) }>{ item }</List.Item>}
           />
         </div>
       </>
