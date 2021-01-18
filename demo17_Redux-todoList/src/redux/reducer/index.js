@@ -1,12 +1,8 @@
-import { CHANGE_INPUT_VALUE, ADD_ITEM, DELETE_ITEM } from '../actionTypes';
+import { CHANGE_INPUT_VALUE, ADD_ITEM, DELETE_ITEM, GET_LIST } from '../actionTypes';
 
 const defaultState = {
   inputValue: '',
-  list: [
-    'react',
-    'vue',
-    'angular'
-  ]
+  list: []
 }
 
 const reducer = ( state = defaultState, action ) => {
@@ -20,9 +16,12 @@ const reducer = ( state = defaultState, action ) => {
     newState.inputValue = '';
     return newState;
   } else if ( action.type === DELETE_ITEM ) {
-    console.log(action.index);
     let newState = JSON.parse(JSON.stringify(state));
     newState.list.splice(action.index, 1);
+    return newState;
+  } else if ( action.type === GET_LIST ) {
+    let newState = JSON.parse(JSON.stringify(state));
+    newState.list = action.data.data.list;
     return newState;
   } else {
     return state;
