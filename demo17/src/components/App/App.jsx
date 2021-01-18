@@ -43,7 +43,7 @@ class App extends Component {
   render() { 
     return (  
       <>
-        <div style={{width: '300px', margin: '1rem auto'}}>
+        <div style={{ width: '300px', margin: '1rem auto' }}>
           <Input 
             placeholder= "Write something..." 
             style={{width: '68%', marginRight: '2%'}} 
