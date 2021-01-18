@@ -8,6 +8,7 @@ class App extends Component {
     super(props);
     this.state = store.getState();
     this.changeInputValue = this.changeInputValue.bind(this);
+    this.clickBtn = this.clickBtn.bind(this);
     this.storeChange = this.storeChange.bind(this);
     store.subscribe(this.storeChange);
   }
@@ -16,6 +17,13 @@ class App extends Component {
     const action = {
       type: 'changeInputValue',
       value: e.target.value
+    }
+    store.dispatch(action);
+  }
+
+  clickBtn(){
+    const action = {
+      type: 'addItem'
     }
     store.dispatch(action);
   }
@@ -29,11 +37,18 @@ class App extends Component {
       <>
         <div style={{width: '300px', margin: '1rem auto'}}>
           <Input 
-            placeholder={ this.state.inputValue }  
+            placeholder= "Write something..." 
             style={{width: '68%', marginRight: '2%'}} 
             onChange={ this.changeInputValue }
+            value={ this.state.inputValue }
           />
-          <Button type="primary" style={{width: '30%'}} >Add</Button>
+          <Button 
+            type="primary" 
+            style={{width: '30%'}} 
+            onClick={ this.clickBtn }
+          >
+            Add
+          </Button>
         </div>
         <div style={{width: '300px', margin: '1rem auto'}}>
           <List 
