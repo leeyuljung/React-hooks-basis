@@ -14,7 +14,6 @@ const reducer = ( state = defaultState, action ) => {
     return newState;
   } else if ( action.type === 'addItem' ) {
     let newState = JSON.parse(JSON.stringify(state));
-    // newState.list.push(newState.inputValue);
     newState.list = [...newState.list, newState.inputValue];
     newState.inputValue = '';
     return newState;
