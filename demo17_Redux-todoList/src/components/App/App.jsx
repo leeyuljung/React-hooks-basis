@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import store from '../../redux/store';
-import { changeInputAction, addItemAction, deleteItemAction } from '../../redux/actionCreators';
+import { changeInputAction, addItemAction, deleteItemAction, getTodoList } from '../../redux/actionCreators';
 import TodoListUI from '../TodoListUI/TodoListUI.jsx';
 
 class App extends Component {
@@ -30,8 +30,8 @@ class App extends Component {
   }
 
   componentDidMount(){
-    // const action = getTodoList();
-    // store.dispatch(action);
+    const action = getTodoList();
+    store.dispatch(action);
   }
 
   storeChange(){
