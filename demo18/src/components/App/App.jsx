@@ -1,29 +1,15 @@
 import React, { Component } from 'react';
+import TodoList from '../TodoList/TodoList.jsx';
+import { Provider } from 'react-redux';
 import store from '../../redux/store';
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = store.getState();
-  }
-
   render() { 
-    return (
-      <>
-        <div>
-          <input 
-            type="text"
-            placeholder="Write something..."
-          />
-          <button>Add</button>
-        </div>
-        <div>
-          <ul>
-            <li>React</li>
-          </ul>
-        </div>
-      </>
-    )
+    return (  
+      <Provider store={ store }>
+        <TodoList />
+      </Provider>
+    );
   }
 }
  
