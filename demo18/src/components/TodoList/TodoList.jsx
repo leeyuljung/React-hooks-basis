@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { inputChangeAction } from '../../redux/actionCreators';
 
 class TodoList extends Component {
-  constructor(props){
-    super(props);
-    this.state = {};
-  }
-
   render() { 
     return (
       <>
@@ -15,6 +11,7 @@ class TodoList extends Component {
             type="text"
             placeholder="Write something..."
             value={ this.props.inputValue }
+            onChange={ this.props.inputChange }
           />
           <button>Add</button>
         </div>
@@ -28,10 +25,19 @@ class TodoList extends Component {
   }
 }
 
-const mapStateToProps = ( state ) => {
+const stateToProps = ( state ) => {
   return {
     inputValue: state.inputValue
   }
 }
+
+const dispatchToProps = ( dispatch ) => {
+  return {
+    inputChange(e){
+      const action = inputChangeAction(e.target.value);
+      dispatch(action);
+    }
+  }
+}
  
-export default connect(mapStateToProps, null)(TodoList);
+export default connect(stateToProps, dispatchToProps)(TodoList);
