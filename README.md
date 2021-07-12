@@ -1,4 +1,10 @@
-# Reactjs-course-by-jspang
-跟著技術胖老師一起練習的 React.js 基礎
+# React-hooks-basis
 
-課程在這兒：[React16 視頻教程](https://jspang.com/detailed?id=56 "Title")
+- Add / Delete list item
+- React-router & Dynamic routing
+- Counter ( UseState + UseEffect )
+- Counter ( UseContext )
+- Change color example ( UseContext + UseReducer )
+- Get beer and coke amout example ( UseMemo )
+- Get window size ( Custom hooks )
+- To-Do List ( Redux + Redux-thunk )
