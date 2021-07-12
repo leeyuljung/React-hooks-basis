@@ -6,6 +6,6 @@
 - Counter ( UseState + UseEffect )
 - Counter ( UseContext )
 - Change color example ( UseContext + UseReducer )
-- Get beer and coke amout example ( UseMemo )
+- Get beer and coke amount example ( UseMemo )
 - Get window size ( Custom hooks )
 - To-Do List ( Redux + Redux-thunk )
